@@ -1,0 +1,4 @@
+numpy
+#glob
+opencv-python
+pandas
