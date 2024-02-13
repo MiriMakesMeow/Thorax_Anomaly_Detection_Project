@@ -1,4 +1,4 @@
-from network import NetworkMatrix
+from NeuralNetwork.network import NetworkMatrix
 
 def train(network, X_train, y_train, epochs, learning_rate):
     for epoch in range(epochs):

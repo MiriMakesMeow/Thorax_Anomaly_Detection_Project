@@ -64,6 +64,8 @@ def load_saved_images():
     images = np.load("images.npy")
     labels = np.load("labels.npy")
     valid_index = len(images)
+
+    print(f'Loaded {valid_index} images')
     return images, labels, valid_index
 
 

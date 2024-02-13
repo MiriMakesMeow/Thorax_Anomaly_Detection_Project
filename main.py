@@ -3,9 +3,9 @@ import numpy as np
 from import_and_processing import load_images_and_labels, load_and_preprocess, load_saved_images
 from preprocessing import preprocessing
 from data_slicing import shuffle_and_split
-from network import NetworkMatrix
+from NeuralNetwork.network import NetworkMatrix
 from train import train
-from evaluation import evaluate
+from NeuralNetwork.evaluation import evaluate
 
 # import images
 # image_paths = glob.glob("./Thorax/images/*.png")
@@ -18,7 +18,6 @@ from evaluation import evaluate
 # images, labels, valid_index = load_and_preprocess(image_paths, labels_path, num_images, use_half=True)
 
 images, labels, valid_index = load_saved_images()
-valid_index = len(images)
 
 X_train, y_train, X_val, y_val, X_test, y_test = shuffle_and_split(images, labels, valid_index)
 
