@@ -11,12 +11,12 @@ num_images = len(image_paths)
 labels_path = "./Thorax/labels.csv"
 
 # Bilder und Labels laden und vorverarbeiten
-images, labels, valid_index = load_and_preprocess(image_paths, labels_path, num_images, use_half=True)
+no_findings, findings = load_and_preprocess(image_paths, labels_path, num_images, use_half=True)
 # oder, wenn bereits gespeichert:
-# images, labels, valid_index = load_saved_images()
+# no_findings, findings = load_saved_images()
 
 # Daten aufteilen
-X_train, y_train, X_val, y_val, X_test, y_test = shuffle_and_split(images, labels, valid_index)
+# TODO: auf no findings anpassen X_train, y_train, X_val, y_val, X_test, y_test = shuffle_and_split(images, labels, valid_index)
 
 # Autoencoder initialisieren
 model = autoencoder
