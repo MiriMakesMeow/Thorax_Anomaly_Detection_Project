@@ -2,7 +2,7 @@ import glob
 import numpy as np
 from import_and_processing import load_images_and_labels, load_and_preprocess, load_saved_images
 from data_slicing import shuffle_and_split
-from autoencoder import build_autoencoder
+from autoencoder import autoencoder
 from keras import callbacks
 
 # Daten importieren und vorverarbeiten
@@ -19,9 +19,9 @@ images, labels, valid_index = load_and_preprocess(image_paths, labels_path, num_
 X_train, y_train, X_val, y_val, X_test, y_test = shuffle_and_split(images, labels, valid_index)
 
 # Autoencoder initialisieren
-model = build_autoencoder(input_shape=(256, 256, 1))
+model = autoencoder
 
-model.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Training konfigurieren
 epochs = 100
