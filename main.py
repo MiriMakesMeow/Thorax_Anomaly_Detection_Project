@@ -11,7 +11,7 @@ num_images = len(image_paths)
 labels_path = "./Thorax/labels.csv"
 
 # Bilder und Labels laden und vorverarbeiten
-#no_findings, findings = load_and_preprocess(image_paths, labels_path, num_images, use_half=True)
+# no_findings, findings = load_and_preprocess(image_paths, labels_path, num_images, use_half=True)
 # oder, wenn bereits gespeichert:
 no_findings, findings = load_saved_images()
 
